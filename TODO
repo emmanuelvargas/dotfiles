@@ -1,0 +1,77 @@
+- switch package from flatpak to apt
+
+- change terminator history to infinite
+
+- python:
+  - env python
+  - pip
+  - pipx
+
+- picard
+
+- docker
+
+- sudo nopasswd
+ myuser ALL=(ALL:ALL) NOPASSWD:ALL 
+
+- xdg pour
+  - copyq
+  - flameshot ?
+
+- EDITOR=vim
+
+- bashrc de /etc
+- bashrc
+
+- wireguard (full install only?)
+
+
+- install kvm QEMU + remote path
+
+- add app in favorite (list in /usr/share/applications/):
+gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'appname.desktop']"
+  - vscode
+  - terminator
+  - remmina
+  - settings
+  - virtual machine
+  ....
+
+- copyQ ?
+  + /home/manu/.config/copyq/copyq.conf
+  + /home/manu/.config/copyq/copyq.conf
+
+- vscode
+https://dev.to/loupeznik/how-to-backup-your-vs-code-extensions-and-settings-4cji
+
+
+
+
+
+perso :
+lutris
+digiKam
+calibre
+ledger live
+cin
+slic3r
+
+
+all:
+vlc
+backintime
+gparted
+thunar?
+synology drive
+dupeGuru
+expandrive
+scaleft
+meld diff viewer
+Devolo
+telegram
+teamviewer
+discord
+gwakeonlan
+xournal++
+wine
+wireshark

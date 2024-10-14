@@ -1,0 +1,8 @@
+[user]
+	email = emmanuel.vargas@gmail.com
+	name = Emmanuel Vargas
+	username = "EmmanuelVargas"
+[github]
+	user = "EmmanuelVargas"
+[core]
+	sshCommand = "ssh -o IdentitiesOnly=yes -i ~/.ssh/id_ed25519_perso"

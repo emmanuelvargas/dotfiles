@@ -1,0 +1,95 @@
+// install flatseal
+// add ~/.local/share/fonts:ro to "Filesystem"
+{
+	"terminal.integrated.copyOnSelection": true,
+	"terminal.integrated.automationProfile.linux": {},
+	"terminal.integrated.scrollback": 40000,
+	"terminal.integrated.shellIntegration.history": 10000,
+	"terminal.integrated.defaultProfile.linux": "zsh",
+	"terminal.integrated.profiles.linux": {
+		"bash": {
+			"path": "/app/bin/host-spawn",
+			"args": [
+				"bash"
+			],
+			"icon": "terminal-bash",
+			"overrideName": true
+		},
+		"zsh": {
+			"path": "/app/bin/host-spawn",
+			"args": [
+				"zsh"
+			],
+			"icon": "terminal-bash",
+			"overrideName": true
+		},
+		"fish": {
+			"path": "fish"
+		},
+		"tmux": {
+			"path": "tmux",
+			"icon": "terminal-tmux"
+		},
+		"pwsh": {
+			"path": "pwsh",
+			"icon": "terminal-powershell"
+		}
+	},
+	"terminal.integrated.gpuAcceleration": "off",
+	"terminal.integrated.fontFamily": "Hack Nerd Font",
+	"terminal.integrated.fontSize": 10,
+	"terminal.integrated.letterSpacing": -0.15,
+	"github.codespaces.allowUnsafeConnections": true,
+	"githubPullRequests.createOnPublishBranch": "never",
+	"git.suggestSmartCommit": false,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	"git.allowForcePush": true,
+	"remote.SSH.maxReconnectionAttempts": 4,
+	"remote.SSH.lockfilesInTmp": true,
+	"remote.tunnels.alwaysUpdateCLI": true,
+	"remote.SSH.defaultExtensions": [
+		"python"
+	],
+	"remote.SSH.showLoginTerminal": true,
+	"remote.SSH.enableX11Forwarding": false,
+	"remote.SSH.enableRemoteCommand": true,
+	"notebook.cellToolbarLocation": {
+		"default": "right",
+		"jupyter-notebook": "left"
+	},
+	"editor.renderControlCharacters": true,
+	"editor.insertSpaces": false,
+	"editor.formatOnPaste": true,
+	"editor.letterSpacing": -0.15,
+	"editor.tabSize": 2,
+	"editor.tabCompletion": "on",
+	"workbench.startupEditor": "none",
+	"workbench.settings.applyToAllProfiles": [],
+	"workbench.settings.editor": "json",
+	"diffEditor.wordWrap": "on",
+	"explorer.confirmDragAndDrop": false,
+	"explorer.confirmDelete": false,
+	"gitlens.advanced.messages": {
+		"suppressGitVersionWarning": true
+	},
+
+	"redhat.telemetry.enabled": false,
+	"[yaml]": {
+		"editor.insertSpaces": true,
+		"editor.tabSize": 2,
+		"editor.autoIndent": "keep",
+		"diffEditor.ignoreTrimWhitespace": false,
+		"editor.quickSuggestions": {
+			"other": true,
+			"comments": false,
+			"strings": true
+		}
+	},
+	"files.watcherExclude": {
+		"**/dev/**": true,
+		"**/venv/**": true
+	},
+	"http.proxyStrictSSL": false
+
+}

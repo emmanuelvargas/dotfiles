@@ -1,0 +1,22 @@
+[global_config]
+  window_state = maximise
+  enabled_plugins = Logger, LaunchpadBugURLHandler, LaunchpadCodeURLHandler, APTURLHandler, ActivityWatch, InactivityWatch
+[keybindings]
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_darkness = 0.74
+    background_type = transparent
+    scrollback_lines = 70000
+    font = Ubuntu Sans Mono 9
+    use_system_font = False
+    copy_on_selection = True
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

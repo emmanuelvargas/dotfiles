@@ -1,0 +1,8 @@
+[user]
+	email = emmanuel.vargas@iress.com
+	name = Emmanuel Vargas
+	username = "EmmanuelVargasIress"
+[github]
+	user = "EmmanuelVargasIress"
+[core]
+	sshCommand = "ssh -o IdentitiesOnly=yes -i ~/.ssh/id_rsa_githubOneIressV2"

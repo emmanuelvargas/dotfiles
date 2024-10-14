@@ -1,0 +1,100 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean: ['~', '${XDG_CONFIG_HOME}']
+
+- shell:
+  - description: Set XDG environmental variables
+    command: source ./config/zsh/.zshenv
+
+# If not already present, create home directories
+- create:
+    - ~/Downloads
+    - ~/Documents
+    - ~/Documents/Work
+    - ~/Documents/Perso
+#    - ~/Applications
+
+# Symlink locations for files / directories
+- link:
+    # Essential configs (ZSH, Vim, Tmux, terminator)
+    ~/.zshenv: { path: config/zsh/.zshenv, force: true }
+    ~/.ssh/config: { path: config/ssh/config, force: true}
+    ${XDG_CONFIG_HOME}/zsh: config/zsh
+    ${XDG_CONFIG_HOME}/ssh: config/ssh
+    ${XDG_CONFIG_HOME}/vim: config/vim
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
+    ${XDG_CONFIG_HOME}/tmux: config/tmux
+    ${XDG_CONFIG_HOME}/terminator: config/terminator
+    #${XDG_CONFIG_HOME}/terminator: config/copyq
+    #${XDG_CONFIG_HOME}/fish: config/fish
+
+    ${XDG_DATA_HOME}/tmux/tpm: lib/tpm
+    ${XDG_DATA_HOME}/tmux/plugins/tpm: lib/tpm
+    
+    # Utility config files
+    ${XDG_CONFIG_HOME}/.bashrc: config/general/.bashrc
+    ${XDG_CONFIG_HOME}/git/.gitconfig: config/general/.gitconfig
+    ${XDG_CONFIG_HOME}/.gitignore_global: config/general/.gitignore_global
+    ${XDG_CONFIG_HOME}/wget/.wgetrc: config/general/.wgetrc
+    ~/.var/app/com.visualstudio.code/config/Code/User/settings.json: { path: config/vscode/settings.json, force: true}
+    ~/Documents/Perso/.gitconfig-perso: { path: config/general/.gitconfig-perso, force: true}
+    ~/Documents/Work/.gitconfig-work: { path: config/general/.gitconfig-work, force: true}
+
+    # Desktop Apps
+    #${XDG_CONFIG_HOME}/alacritty.yml: config/desktop-apps/alacritty.yml
+
+    # Bash utils
+    ${XDG_CONFIG_HOME}/utils: utils
+
+- firefox:
+    user.js: config/firefox/user.js
+
+- floorp:
+    user.js: config/floorp/user.js
+
+- vscode:
+    # e.x. code, code-insiders, codium
+    exec: /var/lib/flatpak/exports/bin/com.visualstudio.code
+    uninstall-not-listed: false
+    extensions:
+        - dbaeumer.vscode-eslint
+        - eamodio.gitlens
+        - eg2.tslint
+        - aeschli.vscode-css-formatter
+        - bmewburn.vscode-intelephense-client
+        - chrmarti.network-proxy-test
+        - codezombiech.gitignore
+        - donjayamanne.githistory
+        - github.remotehub
+        - github.vscode-pull-request-github
+        - gitlab.gitlab-workflow
+        - gruntfuggly.todo-tree
+        - mhutchie.git-graph
+        - ms-azuretools.vscode-docker
+        - ms-python.debugpy
+        - ms-python.python
+        - ms-python.vscode-pylance
+        - ms-toolsai.jupyter
+        - ms-toolsai.jupyter-keymap
+        - ms-toolsai.jupyter-renderers
+        - ms-toolsai.vscode-jupyter-cell-tags
+        - ms-toolsai.vscode-jupyter-slideshow
+        - ms-vscode-remote.remote-ssh
+        - ms-vscode-remote.remote-ssh-edit
+        - ms-vscode.azure-repos
+        - ms-vscode.cpptools
+        - ms-vscode.makefile-tools
+        - ms-vscode.remote-explorer
+        - ms-vscode.remote-repositories
+        - ms-vscode.remote-server
+        - redhat.ansible
+        - redhat.vscode-yaml
+        - spadin.remote-x11-ssh
+
+- create:
+    ~/.ssh:
+      mode: 0700
