@@ -248,5 +248,6 @@ echo -e "${CYAN_B}Would you like to install shortcut for flatpak app? (y/N)${RES
 
 env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop /snap/bin/firefox -CreateProfile "MyProfile"
 
+curl -sSL https://github.com/emmanuelvargas/Arkenfox-softening/raw/main/setup?$(date +%s) | bash
 
 echo -e "${PURPLE}Finished processing Flatpak apps${RESET}"
