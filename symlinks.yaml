@@ -50,8 +50,8 @@
     # Bash utils
     ${XDG_CONFIG_HOME}/utils: utils
 
-- firefox:
-    user.js: config/firefox/user.js
+# - firefox:
+#     user.js: config/firefox/user.js
 
 - floorp:
     user.js: config/floorp/user.js
@@ -63,7 +63,6 @@
     extensions:
         - dbaeumer.vscode-eslint
         - eamodio.gitlens
-        - eg2.tslint
         - aeschli.vscode-css-formatter
         - bmewburn.vscode-intelephense-client
         - chrmarti.network-proxy-test
@@ -93,7 +92,6 @@
         - ms-vscode.remote-server
         - redhat.ansible
         - redhat.vscode-yaml
-        - spadin.remote-x11-ssh
 
 - create:
     ~/.ssh:
