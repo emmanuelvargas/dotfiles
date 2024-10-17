@@ -408,6 +408,8 @@ function finishing_up () {
   make_banner "✨ Dotfiles configured succesfully in $total_time" ${GREEN_B} 1
   echo -e "\033[0;92m     .--.\n    |o_o |\n    |:_/ |\n   // \
   \ \\ \n  (|     | ) \n /'\_   _/\`\\ \n \\___)=(___/\n"
+  echo -e "${CYAN_B}To finish if its the first install please:${RESET}\n"\
+  "${PURPLE}- start firefox and floorp and connect to firefox.${RESET}\n"
 
   # Refresh ZSH sesssion
   SKIP_WELCOME=true || exec zsh
