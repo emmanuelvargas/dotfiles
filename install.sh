@@ -263,8 +263,8 @@ function setup_dot_files () {
   # Set up symlinks with dotbot
   echo -e "${PURPLE}Setting up Symlinks${RESET}"
   cd "${DOTFILES_DIR}" && \
-  echo -e "${PURPLE}add submodules dotbot-firefox${RESET}" && \
-  git submodule add https://github.com/kurtmckee/dotbot-firefox.git
+ # echo -e "${PURPLE}add submodules dotbot-firefox${RESET}" && \
+ # git submodule add https://github.com/kurtmckee/dotbot-firefox.git
   echo -e "${PURPLE}add submodules dotbot-floorp${RESET}" && \
   git submodule add https://github.com/emmanuelvargas/dotbot-floorp.git
   echo -e "${PURPLE}add submodules dotbot-vscode${RESET}" && \
@@ -273,12 +273,12 @@ function setup_dot_files () {
   git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
   echo -e "${PURPLE}submodule update recursive${RESET}" && \
   git submodule update --init --recursive "${DOTBOT_DIR}"
-  echo -e "${PURPLE}submodule update firefox and floorp${RESET}" && \
-  git submodule update --init dotbot-firefox
+  #echo -e "${PURPLE}submodule update firefox and floorp${RESET}" && \
+  #git submodule update --init dotbot-firefox
   git submodule update --init dotbot-floorp
   git submodule update --init dotbot-vscode
   chmod +x  lib/dotbot/bin/dotbot
-  "${DOTFILES_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${DOTFILES_DIR}" --plugin dotbot-firefox/dotbot_firefox.py --plugin dotbot-floorp/dotbot_floorp.py --plugin dotbot-vscode/vscode.py -c "${SYMLINK_FILE}" "${@}"
+  "${DOTFILES_DIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${DOTFILES_DIR}" --plugin dotbot-floorp/dotbot_floorp.py --plugin dotbot-vscode/vscode.py -c "${SYMLINK_FILE}" "${@}"
 }
 
 # Applies application-specific preferences, and runs some setup tasks
