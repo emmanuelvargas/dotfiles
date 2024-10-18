@@ -26,7 +26,7 @@
     ${XDG_CONFIG_HOME}/zsh: config/zsh
     ${XDG_CONFIG_HOME}/ssh: config/ssh
     ${XDG_CONFIG_HOME}/vim: config/vim
-#    ${XDG_CONFIG_HOME}/nvim: config/nvim
+    ${XDG_CONFIG_HOME}/nvim: config/nvim
     ${XDG_CONFIG_HOME}/tmux: config/tmux
     ${XDG_CONFIG_HOME}/terminator: config/terminator
     #${XDG_CONFIG_HOME}/terminator: config/copyq
