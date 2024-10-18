@@ -208,7 +208,7 @@ function pre_setup_tasks () {
   system_verify "git" true
   system_verify "zsh" false
   system_verify "vim" false
-  system_verify "nvim" false
+  #system_verify "nvim" false
   system_verify "tmux" false
 
   # If XDG variables arn't yet set, then configure defaults

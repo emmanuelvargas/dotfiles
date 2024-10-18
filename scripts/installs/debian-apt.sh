@@ -36,7 +36,7 @@
 debian_apps=(
   # Essentials
   'git'           # Version controll
-  'neovim'        # Text editor
+ # 'neovim'        # Text editor REPLACED BY FLATPAK PACKAGE
   'ranger'        # Directory browser
   'tmux'          # Term multiplexer
   'wget'          # Download files

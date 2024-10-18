@@ -89,6 +89,9 @@ if [[ -d "$HOME/.deno" ]]; then
   export PATH="$DENO_INSTALL/bin:$PATH"
 fi
 
+# Append flatpak to path
+export PATH="/var/lib/flatpak/exports/bin:$PATH"
+
 # Add Zoxide (for cd, quick jump) to shell
 if hash zoxide 2> /dev/null; then
     eval "$(zoxide init zsh)"

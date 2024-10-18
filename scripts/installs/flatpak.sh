@@ -74,6 +74,7 @@ flatpak_apps=(
 #  'flathub org.gnome.GHex'    # Hex and binary inspector
 #  'io.podman_desktop.PodmanDesktop' # Docker / Podman UI
   'com.github.tchx84.Flatseal' # to manage permissions on flatpak app. Used for fonts on vscode
+  'io.neovim.nvim'             # neovim
   
   # Security testing
 #  'org.wireshark.Wireshark'   # Packet capture and analyzer
