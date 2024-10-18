@@ -7,4 +7,4 @@
 # if ! hash nvim 2> /dev/null; then
 #   alias nvim='vim'
 # fi
-alias nvim='io.neovim.vim'
+alias nvim='io.neovim.nvim'
