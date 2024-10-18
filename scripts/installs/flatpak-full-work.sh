@@ -175,7 +175,7 @@ for app in ${flatpak_apps[@]}; do
   install_app $app
 done
 
-# fixing vscode permissions
+# fixing vscode permissions for loading user fonts for zsh
 echo -e "${PURPLE}fixing vscode permissions for fonts${RESET}"
 flatpak override com.visualstudio.code --filesystem=~/.local/share/fonts:ro
 

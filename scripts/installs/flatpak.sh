@@ -247,6 +247,11 @@ echo -e "${CYAN_B}Would you like to install shortcut for flatpak app? (y/N)${RES
   done
 # fi
 
+
+# fixing neovim permissions to start zsh
+echo -e "${PURPLE}fixing neovim permissions to start zsh${RESET}"
+sudo flatpak override io.neovim.nvim --talk-name org.freedesktop.Flatpak
+
 env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/firefox_firefox.desktop /snap/bin/firefox -CreateProfile "MyProfile"
 
 curl -sSL https://github.com/emmanuelvargas/Arkenfox-softening/raw/main/setup?$(date +%s) | bash
