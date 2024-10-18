@@ -144,6 +144,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
 
+# show hidden files in nautilus
+gsettings set org.gnome.nautilus.preferences show-hidden-files true
+
 # Run update command
 echo -e "\n${PRIMARY_COLOR}Reloading dconf database${RESET}"
 sudo dconf update
