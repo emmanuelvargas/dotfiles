@@ -352,6 +352,12 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
+# install balena etcher
+## TODO: install libgdk-pixbuf-xlib-2.0-0 libgdk-pixbuf2.0-0 pakcage first 
+##  NAME=$(curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
+## jq -r '.assets[] | select(.name | contains ("deb")) | .name') ; curl --location --silent  $(curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
+## jq -r '.assets[] | select(.name | contains ("deb")) | .browser_download_url') --output ${NAME} && sudo dpkg -i ${NAME}
+
 # adding shortcut to bar
 echo -e "${CYAN_B}Would you like to install shortcut to bar? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r
