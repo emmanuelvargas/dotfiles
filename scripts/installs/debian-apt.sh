@@ -95,6 +95,7 @@ debian_apps=(
   'trash-cli'     # Record and restore removed files
   'xsel'          # Copy paste access to the X clipboard
   'zoxide'        # Auto-learning navigation (better cd)
+  'gwakeonlan'    # wakes up your machines using Wake on LAN
 
   # Languages, compilers, runtimes, etc
   'golang'
@@ -129,16 +130,22 @@ debian_apps=(
   'liblzma-dev'
   'libevent-dev'
   'bison'
+  'dupeguru'            # GUI tool to find duplicate files in a system
+  'meld'                # graphical tool to diff and merge files
+  'tcpdump'             # command-line network traffic analyzer
+  'ssldump'             # ssldump
 
   # Security Utilities
-  'clamav'        # Open source virus scanning suite
-  'cryptsetup'    # Reading / writing encrypted volumes
-  'gnupg'         # PGP encryption, signing and verifying
-  'git-crypt'     # Transparent encryption for git repos
-  'lynis'         # Scan system for common security issues
-  'openssl'       # Cryptography and SSL/TLS Toolkit
-  'rkhunter'      # Search / detect potential root kits
-  'wireguard'     # wireguard VPN
+  'clamav'            # Open source virus scanning suite
+  'cryptsetup'        # Reading / writing encrypted volumes
+  'gnupg'             # PGP encryption, signing and verifying
+  'git-crypt'         # Transparent encryption for git repos
+  'lynis'             # Scan system for common security issues
+  'openssl'           # Cryptography and SSL/TLS Toolkit
+  'rkhunter'          # Search / detect potential root kits
+  'wireguard'         # wireguard VPN
+  'backintime-common' # backup
+  'gparted'           # disk management
 
   # Monitoring, management and stats
   'btop'          # Live system resource monitoring
@@ -156,6 +163,10 @@ debian_apps=(
   'figlet'        # Outputs text as 3D ASCII word art
   'lolcat'        # Rainbow colored terminal output
   'neofetch'      # Show off distro and system info
+
+  # misc lib
+  'libgdk-pixbuf-xlib-2.0-0'
+  'libgdk-pixbuf2.0-0'
 )
 
 ubuntu_repos=(

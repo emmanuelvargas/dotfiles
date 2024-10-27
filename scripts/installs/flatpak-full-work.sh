@@ -3,18 +3,13 @@
 flatpak_apps=(
 
   # Communication
-#  'org.signal.Signal'         # Private messenger, mobile
   # 'org.videolan.VLC'          # Media player TODO: <<<<< TO UNCOMMENT
 
   # Creativity
-# 'com.ultimaker.cura'        # 3D slicing
-#  'com.obsproject.Studio'     # Video streaming
   # 'com.jgraph.drawio.desktop' # UML + Diagram tool TODO: <<<<< TO UNCOMMENT
   'com.uploadedlobster.peek'  # Screen recorder
   'fr.handbrake.ghb'          # Video transcoder
   'nl.hjdskes.gcolor3'        # Color picker
-#  'org.darktable.Darktable'   # Video editor
-# 'org.flameshot.Flameshot'   # Screenshot tool
   #'org.gimp.GIMP'             # Picture editor TODO: <<<<< TO UNCOMMENT
   # 'org.shotcut.Shotcut'       # Video editor TODO: <<<<< TO UNCOMMENT
   
@@ -30,15 +25,14 @@ flatpak_apps=(
   # Settings and system utils
   'org.bleachbit.BleachBit'   # Disk cleaner and log remover
   'it.mijorus.smile'            # Emoji picker
+
   # Security testing
- 'org.wireshark.Wireshark'   # Packet capture and analyzer
- 'org.zaproxy.ZAP'           # Auto vulnerability scanning
- 'org.nmap.Zenmap'           # GUI for Nmap security scans
+  'org.wireshark.Wireshark'   # Packet capture and analyzer
+  'org.zaproxy.ZAP'           # Auto vulnerability scanning
+  'org.nmap.Zenmap'           # GUI for Nmap security scans
 
   # Browsers and internet
-#  'org.mozilla.firefox'       # Firefox web browser (primary)
-#  'com.github.Eloston.UngoogledChromium' # Chromium-based borwser (secondary)
-#  'com.github.micahflee.torbrowser-launcher' # Tor browser  
+  'org.mozilla.firefox'       # Firefox web browser (primary)
 )
 
 dashbar_apps=(

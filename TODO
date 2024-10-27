@@ -9,8 +9,6 @@
 
 - picard
 
-- docker
-
 - sudo nopasswd
  myuser ALL=(ALL:ALL) NOPASSWD:ALL 
 
@@ -49,29 +47,16 @@ https://dev.to/loupeznik/how-to-backup-your-vs-code-extensions-and-settings-4cji
 
 
 perso :
-lutris
-digiKam
-calibre
 ledger live
 cin
 slic3r
 
 
 all:
-vlc
-backintime
-gparted
 thunar?
 synology drive
-dupeGuru
 expandrive
 scaleft
-meld diff viewer
 Devolo
-telegram
 teamviewer
-discord
-gwakeonlan
-xournal++
 wine
-wireshark

@@ -4,6 +4,22 @@ debian_apps=(
   # more
   'remmina'
   'remmina-plugin*'
+
+  # Virtual machine
+  'qemu-kvm'
+  'virt-manager'
+  'virtinst'
+  'libvirt-clients'
+  'bridge-utils'
+  'libvirt-daemon-system'
+
+  # for remotebox
+  'libgtk3-perl'
+  'libsoap-lite-perl'
+  'freerdp2-x11'
+  'tigervnc-viewer'
+
+  # creativity
   )
 
 dashbar_apps=(
@@ -67,6 +83,22 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   done
 fi
 
+sudo systemctl start libvirtd
+sudo usermod -aG libvirt $USER
+
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 echo -e "${CYAN_B}Would you like to install shortcut for for advanced APT app? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r

@@ -105,11 +105,8 @@ flatpak_apps=(
 #  'org.cryptomator.Cryptomator'     # Encryption for cloud
 #  'org.standardnotes.standardnotes' # Encrypted synced notes
 #  'com.onepassword.OnePassword'     # Password manager
-  'com.bitwarden.desktop'
+  'com.bitwarden.desktop'             # Password manager
   # Missing: Trewsorit, EteSync, Veracrypt, Ledger
-
-  # for testing script
-#  'org.signal.Signal'
 )
 
 dashbar_apps=(

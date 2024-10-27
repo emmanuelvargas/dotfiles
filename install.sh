@@ -347,7 +347,7 @@ function install_packages () {
   fi
   # If running in Linux desktop mode, prompt to install desktop apps via Flatpak
   flatpak_script="${DOTFILES_DIR}/scripts/installs/flatpak.sh"
-  flatpak_full_script="${DOTFILES_DIR}/scripts/installs/flatpak-full-work.sh"
+  flatpak_full_script="${DOTFILES_DIR}/scripts/installs/flatpak-full-perso.sh"
 
   if [[ $SYSTEM_TYPE == "Linux" ]] && [ ! -z $XDG_CURRENT_DESKTOP ] && [ -f $flatpak_script ]; then
     chmod +x $flatpak_script

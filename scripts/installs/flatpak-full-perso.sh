@@ -4,9 +4,22 @@ flatpak_apps=(
 
   # Communication
   'org.signal.Signal'         # Private messenger, mobile
-  'org.videolan.VLC'          # Media player
+  'org.telegram.desktop'      # Telegram Desktop
+  'com.discordapp.Discord'    # Team messaging and voice
+  'com.github.eneshecan.WhatsAppForLinux' # WhatApp client
+
+  # Media
+  'com.gitlab.newsflash'      # RSS reader
+  'org.libretro.RetroArch'    # Retro game emulation
+  'com.github.johnfactotum.Foliate' # E-book reader
+  'tech.feliciano.pocket-casts' # Podcast client
 
   # Creativity
+  'com.uploadedlobster.peek'  # Screen recorder
+  'fr.handbrake.ghb'          # Video transcoder
+  'nl.hjdskes.gcolor3'        # Color picker
+#  'org.audacityteam.Audacity' # Sound editor
+#  'org.inkscape.Inkscape'     # Vector editor
   'com.ultimaker.cura'        # 3D slicing
   'com.obsproject.Studio'     # Video streaming
   'com.jgraph.drawio.desktop' # UML + Diagram tool
@@ -17,6 +30,12 @@ flatpak_apps=(
 #  'org.flameshot.Flameshot'   # Screenshot tool
   'org.gimp.GIMP'             # Picture editor
   'org.shotcut.Shotcut'       # Video editor
+  'org.kde.digikam'           # Photo Management Program
+  'net.lutris.Lutris'         # Video game preservation platform
+  'com.calibre_ebook.calibre' # The one stop solution to all your e-book needs
+  'org.videolan.VLC'          # Media player
+  'org.musicbrainz.Picard'    # Next-Generation MusicBrainz audio files tagger
+  'com.prusa3d.PrusaSlicer'   # Get perfect 3D prints
   
   # Software development
   'com.visualstudio.code'     # Extendable IDE
@@ -31,9 +50,11 @@ flatpak_apps=(
   'it.mijorus.smile'            # Emoji picker
 
   # Browsers and internet
-  'org.mozilla.firefox'       # Firefox web browser (primary)
   'com.github.Eloston.UngoogledChromium' # Chromium-based borwser (secondary)
 #  'com.github.micahflee.torbrowser-launcher' # Tor browser  
+
+  # crypto
+  'org.getmonero.Monero'        ##Monero: the secure, private, untraceable cryptocurrency
 )
 
 dashbar_apps=(
