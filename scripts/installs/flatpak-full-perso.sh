@@ -58,7 +58,7 @@ flatpak_apps=(
 )
 
 dashbar_apps=(
-  'com.visualstudio.code' # to replace by flatpak package  
+  'com.visualstudio.code'
 )
 
 # Color Variables
