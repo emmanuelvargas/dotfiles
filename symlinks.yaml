@@ -42,6 +42,7 @@
     ${XDG_CONFIG_HOME}/.gitignore_global: config/general/.gitignore_global
     ${XDG_CONFIG_HOME}/wget/.wgetrc: config/general/.wgetrc
     ~/.var/app/com.visualstudio.code/config/Code/User/settings.json: { path: config/vscode/settings.json, force: true}
+    ~/.gitconfig: { path: config/general/.gitconfig, force: true}
     ~/Documents/Perso/.gitconfig-perso: { path: config/general/.gitconfig-perso, force: true}
     ~/Documents/Work/.gitconfig-work: { path: config/general/.gitconfig-work, force: true}
 
