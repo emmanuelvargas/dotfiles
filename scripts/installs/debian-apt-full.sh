@@ -19,11 +19,21 @@ debian_apps=(
   'freerdp2-x11'
   'tigervnc-viewer'
 
+  # docker
+  'docker-ce'
+  'docker-ce-cli'
+  'containerd.io'
+  'docker-buildx-plugin'
+  'docker-compose-plugin'
+
   # creativity
   )
 
 dashbar_apps=(
-  'org.remmina.Remmina.desktop'  
+  'org.remmina.Remmina.desktop'
+  'virt-manager.desktop' 
+  'remotebox32.desktop'
+  'remotebox33.desktop'
 )
 
 # Colors
@@ -86,19 +96,64 @@ fi
 sudo systemctl start libvirtd
 sudo usermod -aG libvirt $USER
 
-sudo apt-get install ca-certificates curl
-sudo install -m 0755 -d /etc/apt/keyrings
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+# install remotebox 3.2 and 3.3
+echo -e "${CYAN_B}Would you like to install GITUI? (y/N)${RESET}\n"
+read -t $PROMPT_TIMEOUT -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  REMOTEBOX33="https://remotebox.knobgoblin.org.uk/downloads/RemoteBox-3.3.tar.bz2"
+  REMOTEBOX32="https://remotebox.knobgoblin.org.uk/downloads/RemoteBox-3.2.tar.bz2"
+  # 3.3
+  echo $REMOTEBOX33 | /bin/wget -O ~/Downloads/RemoteBox-3.3.tar.bz2 -qi -
+  /bin/tar xf ~/Downloads/RemoteBox-3.3.tar.bz2
+  /bin/sudo /bin/rm -Rf /usr/local/bin/RemoteBox-3.3
+  /bin/sudo /bin/mv -f RemoteBox-3.3 /usr/local/bin/
+  /bin/rm ~/Downloads/RemoteBox-3.3.tar.bz2
+  /bin/rm RemoteBox-3.3 2> /dev/null
+  sudo tee /usr/share/applications/remotebox33.desktop > /dev/null <<'EOF'
+[Desktop Entry]
+Version=3.3
+Type=Application
+Name=RemoteBox33
+Comment=Manage virtualbox headless server for vbox 7.1
+Icon=/usr/local/bin/RemoteBox-3.3/share/remotebox/icons/remotebox.png
+OnlyShowIn=Budgie;Cinnamon;GNOME;KDE;LXDE;LXQt;MATE;Pantheon;Unity;XFCE;
+Exec=/usr/local/bin/RemoteBox-3.3/remotebox
+Categories=GNOME;GTK;Settings;DesktopSettings;Utility;
+Keywords=Configuration;vbox;virtualbox;
+StartupNotify=true
+Terminal=false
+X-Ubuntu-Gettext-Domain=RemoteBox33
 
-# Add the repository to Apt sources:
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt-get update
+EOF
+  sudo chmod +x /usr/share/applications/remotebox33.desktop
 
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  # 3.2
+  echo $REMOTEBOX32 | /bin/wget -O ~/Downloads/RemoteBox-3.2.tar.bz2 -qi -
+  /bin/tar xf ~/Downloads/RemoteBox-3.2.tar.bz2
+  /bin/sudo /bin/rm -Rf /usr/local/bin/RemoteBox-3.2
+  /bin/sudo /bin/mv -f RemoteBox-3.2 /usr/local/bin/
+  /bin/rm ~/Downloads/RemoteBox-3.2.tar.bz2
+  /bin/rm RemoteBox-3.2 2> /dev/null
+  sudo tee /usr/share/applications/remotebox32.desktop > /dev/null <<'EOF'
+[Desktop Entry]
+Version=3.2
+Type=Application
+Name=RemoteBox32
+Comment=Manage virtualbox headless server for vbox 7.0
+Icon=/usr/local/bin/RemoteBox-3.2/share/remotebox/icons/remotebox.png
+OnlyShowIn=Budgie;Cinnamon;GNOME;KDE;LXDE;LXQt;MATE;Pantheon;Unity;XFCE;
+Exec=/usr/local/bin/RemoteBox-3.2/remotebox
+Categories=GNOME;GTK;Settings;DesktopSettings;Utility;
+Keywords=Configuration;vbox;virtualbox;
+StartupNotify=true
+Terminal=false
+X-Ubuntu-Gettext-Domain=RemoteBox32
+
+EOF
+  sudo chmod +x /usr/share/applications/remotebox32.desktop
+
+fi
 
 echo -e "${CYAN_B}Would you like to install shortcut for for advanced APT app? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r

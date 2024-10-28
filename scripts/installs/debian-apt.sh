@@ -185,6 +185,8 @@ dashbar_apps=(
   'terminator.desktop'
   'geany.desktop'
   'floorp.desktop'
+  'org.gnome.Settings.desktop'
+  'menulibre.desktop'
 )
 
 # Following packages not found by apt, need to fix:
@@ -265,8 +267,18 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 
   sudo add-apt-repository -y ppa:aos1/diff-so-fancy
 
+  # for floorp 
   curl -fsSL https://ppa.ablaze.one/KEY.gpg | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/Floorp.gpg
   sudo curl -sS --compressed -o /etc/apt/sources.list.d/Floorp.list 'https://ppa.ablaze.one/Floorp.list'
+
+  # for docker
+  sudo install -m 0755 -d /etc/apt/keyrings
+  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  sudo chmod a+r /etc/apt/keyrings/docker.asc
+  echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 fi
 
@@ -364,10 +376,15 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
 fi
 
 # install balena etcher
-## TODO: install libgdk-pixbuf-xlib-2.0-0 libgdk-pixbuf2.0-0 pakcage first 
-##  NAME=$(curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
-## jq -r '.assets[] | select(.name | contains ("deb")) | .name') ; curl --location --silent  $(curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
-## jq -r '.assets[] | select(.name | contains ("deb")) | .browser_download_url') --output ${NAME} && sudo dpkg -i ${NAME}
+echo -e "${CYAN_B}Would you like to install balena etcher? (y/N)${RESET}\n"
+read -t $PROMPT_TIMEOUT -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  NAME=$(/bin/curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
+  jq -r '.assets[] | select(.name | contains ("deb")) | .name') ; /bin/curl --location --silent  $(/bin/curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
+  jq -r '.assets[] | select(.name | contains ("deb")) | .browser_download_url') --output ${NAME} && sudo apt -y ./${NAME}
+  rm ./${NAME}
+fi
 
 # adding shortcut to bar
 echo -e "${CYAN_B}Would you like to install shortcut to bar? (y/N)${RESET}\n"

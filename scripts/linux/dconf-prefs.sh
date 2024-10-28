@@ -138,7 +138,7 @@ apply_dconf () {
 # apply_dconf '/org/gnome/todo/' 'todo'               # Apply todo list app settings
 # apply_dconf '/org/gnome/shell/extensions/' 'gnome-extensions'
 
-# Hide sidebar
+# sidebar
 gsettings set org.gnome.shell.extensions.dash-to-dock intellihide true
 gsettings set org.gnome.shell.extensions.dash-to-dock dock-fixed true
 gsettings set org.gnome.shell.extensions.dash-to-dock autohide false
@@ -146,6 +146,21 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 24
 
 # show hidden files in nautilus
 gsettings set org.gnome.nautilus.preferences show-hidden-files true
+gsettings set org.gtk.gtk4.Settings.FileChooser show-hidden true # changed in 24.04
+
+# Disable diagnostics reporting
+gsettings set com.ubuntu.update-notifier show-apport-crashes false
+
+# list view
+gsettings set org.gnome.nautilus.preferences default-folder-viewer list-view
+gsettings set org.gnome.nautilus.list-view use-tree-view true
+
+# theme
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface gtk-theme 'Yaru-blue-dark'
+
+# batterie %
+gsettings set org.gnome.desktop.interface show-battery-percentage true
 
 # Run update command
 echo -e "\n${PRIMARY_COLOR}Reloading dconf database${RESET}"

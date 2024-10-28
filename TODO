@@ -49,8 +49,6 @@ https://dev.to/loupeznik/how-to-backup-your-vs-code-extensions-and-settings-4cji
 perso :
 ledger live
 cin
-slic3r
-
 
 all:
 thunar?
@@ -60,3 +58,17 @@ scaleft
 Devolo
 teamviewer
 wine
+
+
+bug:
+- visual studio not in dash
+#- add virtual server in dash [search *.desktop]
+- check ~/.gitconfig is OK after fresh install
+- floorp et firefox: check default profiles setup
+#- docker install: --yes
+#- remove arkenfox windows confirmation
+- install remotebox
+#- install balena etcher
+- flameshot shortcut (gnome shortcut)
+- essayer d installer copyq ?
+#- settings ds la dash?
