@@ -440,6 +440,7 @@ cleanup_package () {
       if [ -f "/etc/debian_version" ]; then
         sudo apt remove -y thunderbird rhythmbox simple-scan cheese \
           aisleriot gnome-sudoku gnome-mines gnome-mahjongg && \
+          apport apport-symptoms popularity-contest ubuntu-report whoopsie && \
         sudo apt autoremove -y && \
         sudo apt autoclean -y
       fi
