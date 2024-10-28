@@ -50,7 +50,7 @@ flatpak_apps=(
   'it.mijorus.smile'            # Emoji picker
 
   # Browsers and internet
-  'com.github.Eloston.UngoogledChromium' # Chromium-based borwser (secondary)
+  #'com.github.Eloston.UngoogledChromium' # Chromium-based borwser (secondary)
 #  'com.github.micahflee.torbrowser-launcher' # Tor browser  
 
   # crypto
@@ -192,9 +192,9 @@ for app in ${flatpak_apps[@]}; do
 done
 
 echo -e "${CYAN_B}Would you like to install shortcut for ADVANCED flatpak app? (y/N)${RESET}\n"
-read -t $PROMPT_TIMEOUT -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
+# read -t $PROMPT_TIMEOUT -n 1 -r
+# echo
+# if [[ $REPLY =~ ^[Yy]$ ]]; then
   echo -e "${PURPLE}Starting creating shortcut...${RESET}"
   CURRENT_DASH=$(gsettings get org.gnome.shell favorite-apps)
   echo -e "CURRENT DASH :${CURRENT_DASH}:"
@@ -207,6 +207,6 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
       gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), '${app}']"
     fi
   done
-fi
+# fi
 
 echo -e "${PURPLE}Finished processing Flatpak apps${RESET}"
