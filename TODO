@@ -61,7 +61,7 @@ wine
 
 
 bug:
-- visual studio not in dash
+#- visual studio not in dash
 #- add virtual server in dash [search *.desktop]
 - check ~/.gitconfig is OK after fresh install
 - floorp et firefox: check default profiles setup

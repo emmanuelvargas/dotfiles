@@ -32,7 +32,6 @@ debian_apps=(
 dashbar_apps=(
   'org.remmina.Remmina.desktop'
   'virt-manager.desktop' 
-  'remotebox32.desktop'
   'remotebox33.desktop'
 )
 
@@ -126,7 +125,7 @@ Terminal=false
 X-Ubuntu-Gettext-Domain=RemoteBox33
 
 EOF
-  sudo chmod +x /usr/share/applications/remotebox33.desktop
+  #sudo chmod +x /usr/share/applications/remotebox33.desktop
 
   # 3.2
   echo $REMOTEBOX32 | /bin/wget -O ~/Downloads/RemoteBox-3.2.tar.bz2 -qi -
@@ -151,7 +150,7 @@ Terminal=false
 X-Ubuntu-Gettext-Domain=RemoteBox32
 
 EOF
-  sudo chmod +x /usr/share/applications/remotebox32.desktop
+  #sudo chmod +x /usr/share/applications/remotebox32.desktop
 
 fi
 
