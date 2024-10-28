@@ -35,15 +35,14 @@
 # Apps to be installed via apt-get
 debian_apps=(
   # Essentials
-  'git'           # Version controll
- # 'neovim'        # Text editor REPLACED BY FLATPAK PACKAGE
-  'ranger'        # Directory browser
-  'tmux'          # Term multiplexer
-  'wget'          # Download files
-  'zsh'           # Shell of choice
-  'geany'         # text editor
-  'geany-plugin*' # text editor
-  'curl'          # curl
+  'git'                       # Version controll
+  'ranger'                    # Directory browser
+  'tmux'                      # Term multiplexer
+  'wget'                      # Download files
+  'zsh'                       # Shell of choice
+  'geany'                     # text editor
+  'geany-plugin*'             # text editor
+  'curl'                      # curl
   'zsh-syntax-highlighting'
   'terminator'
   'gpg'
@@ -58,8 +57,9 @@ debian_apps=(
   'traceroute'
   'gir1.2-gda-5.0'
   'gir1.2-gsound-1.0'
-  'wl-clipboard' # xclip replacement for wayland
-  'floorp' # browser replacement for firefox
+  'wl-clipboard'              # xclip replacement for wayland
+  'floorp'                    # browser replacement for firefox
+  'file-roller'               # for archive management
 
   # CLI Power Basics
   'aria2'         # Resuming download util (better wget)
