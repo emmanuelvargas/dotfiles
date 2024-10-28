@@ -24,7 +24,7 @@
 - wireguard (full install only?)
 
 
-- install kvm QEMU + remote path
+#- install kvm QEMU + remote path
 
 - add app in favorite (list in /usr/share/applications/):
 gsettings set org.gnome.shell favorite-apps "$(gsettings get org.gnome.shell favorite-apps | sed s/.$//), 'appname.desktop']"
