@@ -382,7 +382,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   NAME=$(/bin/curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
   jq -r '.assets[] | select(.name | contains ("deb")) | .name') ; /bin/curl --location --silent  $(/bin/curl -s https://api.github.com/repos/balena-io/etcher/releases/latest  | \
-  jq -r '.assets[] | select(.name | contains ("deb")) | .browser_download_url') --output ${NAME} && sudo apt -y ./${NAME}
+  jq -r '.assets[] | select(.name | contains ("deb")) | .browser_download_url') --output ${NAME} && sudo apt install -y ./${NAME}
   rm ./${NAME}
 fi
 
