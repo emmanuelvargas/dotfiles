@@ -359,7 +359,7 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ARCHITECTURE=x86_64
   /bin/curl -iL -s https://api.github.com/repos/extrawurst/gitui/releases/latest | /bin/grep -wo "https.*gitui.*linux.*${ARCHITECTURE}.*tar.gz" | /bin/wget -O ~/Downloads/gitui.tar.gz -qi -
-  /bin/tar xzvf ~/Downloads/gitui.gz
+  /bin/tar xzvf ~/Downloads/gitui.tar.gz
   /bin/sudo /bin/chown root:root gitui
   /bin/sudo /bin/chmod u=rwx,g=rx,o=rx gitui
   /bin/sudo /bin/mv gitui /usr/local/bin/
