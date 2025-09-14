@@ -1,0 +1,45 @@
+
+
+    Make sure your system is up to date:
+
+        sudo apt update
+
+        sudo apt upgrade
+
+    Update firmware (this may take quite a while, make sure you're connected to power and be patient):
+
+        sudo fwupdmgr refresh
+
+        sudo fwupdmgr get-updates
+
+        sudo fwupdmgr update
+
+    Install fprintd:
+
+        sudo apt install fprintd
+
+    Install driver dependencies and driver itself:
+
+        sudo apt install git
+
+        sudo apt install python3-pip
+
+        wget http://nz2.archive.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
+
+        sudo dpkg -i libssl1.1_1.1.1f-1ubuntu2.16_amd64.deb
+
+        git clone https://git.launchpad.net/~oem-solutions-engineers/libfprint-2-tod1-broadcom/+git/libfprint-2-tod1-broadcom/
+
+        cd libfprint-2-tod1-broadcom
+
+        sudo sh install.sh
+
+        python3 debian/update-fw.py
+
+    Enable fingerprint authentication (make sure the Fingerprint authentication is ticked):
+
+        sudo pam-auth-update
+
+    Reboot
+
+    Enroll fingerprint - go to Settings > Users - you should be able to see Fingerprint Login field below Password.
