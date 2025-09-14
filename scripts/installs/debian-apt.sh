@@ -391,9 +391,9 @@ echo -e "${CYAN_B}Would you like to install ente auth? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
-  NAME=$(/bin/curl -s https://api.github.com/repos/ente-io/photos-desktop/releases/latest  | \
-  jq -r '.assets[] | select(.name | contains ("deb") and contains ("amd64")) | .name') ; /bin/curl --location --silent  $(/bin/curl -s https://api.github.com/repos/ente-io/photos-desktop/releases/latest  | \
-  jq -r '.assets[] | select(.name | contains ("deb") and contains ("amd64")) | .browser_download_url') --output ${NAME} && sudo apt install -y ./${NAME}
+  NAME=$(/bin/curl -s https://api.github.com/repos/ente-io/ente/releases  | \
+  jq -r '.[] | .assets[]? | select(.name | startswith("ente-auth") and contains ("deb") and contains ("x86_64")) | .name' | head -n 1) ; /bin/curl --location --silent  $(/bin/curl -s https://api.github.com/repos/ente-io/ente/releases  | \
+  jq -r '.[] | .assets[]? | select(.name | startswith("ente-auth") and contains ("deb") and contains ("x86_64")) |.browser_download_url' | head -n 1) --output ${NAME} && sudo apt install -y ./${NAME}
   rm ./${NAME}
 fi
 
