@@ -386,6 +386,17 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   rm ./${NAME}
 fi
 
+# install ente auth
+echo -e "${CYAN_B}Would you like to install ente auth? (y/N)${RESET}\n"
+read -t $PROMPT_TIMEOUT -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  NAME=$(/bin/curl -s https://api.github.com/repos/ente-io/photos-desktop/releases/latest  | \
+  jq -r '.assets[] | select(.name | contains ("deb") and contains ("amd64")) | .name') ; /bin/curl --location --silent  $(/bin/curl -s https://api.github.com/repos/ente-io/photos-desktop/releases/latest  | \
+  jq -r '.assets[] | select(.name | contains ("deb") and contains ("amd64")) | .browser_download_url') --output ${NAME} && sudo apt install -y ./${NAME}
+  rm ./${NAME}
+fi
+
 # adding shortcut to bar
 echo -e "${CYAN_B}Would you like to install shortcut to bar? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r
