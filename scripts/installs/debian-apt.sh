@@ -363,7 +363,7 @@ if [[ $REPLY =~ ^[Yy]$ ]]; then
   /bin/sudo /bin/chown root:root gitui
   /bin/sudo /bin/chmod u=rwx,g=rx,o=rx gitui
   /bin/sudo /bin/mv gitui /usr/local/bin/
-  /bin/rm ~/Downloads/gitui.gz
+  /bin/rm ~/Downloads/gitui.tar.gz
   /bin/rm gitui 2> /dev/null
 fi
 
