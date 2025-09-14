@@ -96,7 +96,7 @@ sudo systemctl start libvirtd
 sudo usermod -aG libvirt $USER
 
 # install remotebox 3.2 and 3.3
-echo -e "${CYAN_B}Would you like to install GITUI? (y/N)${RESET}\n"
+echo -e "${CYAN_B}Would you like to install remoteBox? (y/N)${RESET}\n"
 read -t $PROMPT_TIMEOUT -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
