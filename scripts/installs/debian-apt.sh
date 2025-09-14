@@ -358,7 +358,7 @@ read -t $PROMPT_TIMEOUT -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
   ARCHITECTURE=x86_64
-  /bin/curl -s /bin/curl -s https://api.github.com/repos/extrawurst/gitui/releases/latest | /bin/grep -wo "https.*gitui.*linux.*${ARCHITECTURE}.*gz" | /bin/wget -O ~/Downloads/gitui.gz -qi -
+  /bin/curl -s /bin/curl -s https://api.github.com/repos/extrawurst/gitui/releases/latest | /bin/grep -wo "https.*gitui.*linux.*${ARCHITECTURE}.*tar.gz" | /bin/wget -O ~/Downloads/gitui.tar.gz -qi -
   /bin/tar xzvf ~/Downloads/gitui.gz
   /bin/sudo /bin/chown root:root gitui
   /bin/sudo /bin/chmod u=rwx,g=rx,o=rx gitui
